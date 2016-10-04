@@ -1,4 +1,4 @@
-from usefulStuff import primeFactors,is_prime,genPrimes,totient
+from usefulStuff import genPrimes,totient
 from functools import reduce
 from operator import mul
 from math import log as ln
