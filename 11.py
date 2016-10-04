@@ -49,4 +49,4 @@ def duProducts(m):
   return products
 
 
-print(max(hProducts(M)+vProducts(M)+ddProducts(M)+duProducts(M)))
+max(hProducts(M)+vProducts(M)+ddProducts(M)+duProducts(M))

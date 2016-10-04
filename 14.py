@@ -18,4 +18,4 @@ def func14():
       res = i
   return res
 
-print(func14())
+func14()

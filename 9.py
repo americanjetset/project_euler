@@ -7,5 +7,5 @@ for r in range(2,1000,2):
     y = r + pair[1]
     z = r + pair[0] + pair[1]
     if x+y+z == 1000:
-      print(x*y*z)
+      print x*y*z
       break

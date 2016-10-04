@@ -33,6 +33,7 @@ def func61((a,b,c,d,e,f)):
                     for n6 in checks[f]:
                       if n6 % 100 == n5/100:
                         if n1 % 100 == n6/100:
+                          print (n1,n2,n3,n4,n5,n6)
                           print sum((n1,n2,n3,n4,n5,n6))
 
 for p in [i for i in permutations([1,2,3,4,5])]:

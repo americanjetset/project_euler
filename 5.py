@@ -13,7 +13,7 @@ def maxCount(lis, elem):
 for p in genPrimes(20):
   multiplicity += [maxCount([primeFactors(i) for i in range(2,21)],p)]
 
-for (p,m) in zip(genPrimes(20),multiplicity):
+for (p,m) in zip(primes,multiplicity):
   result *= (p**m)
 
 print(result)

@@ -19,4 +19,4 @@ for r in range(13,-1,-1):
   for i in range(0,r+1):
     tri[r][i] += max(tri[r+1][i],tri[r+1][i+1])
 
-print(tri[0][0])
+print(tri[0])

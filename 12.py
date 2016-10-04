@@ -13,4 +13,4 @@ def func12():
 
 
 
-print(func12())
+func12()

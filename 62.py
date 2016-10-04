@@ -14,5 +14,5 @@ for c in cubes:
 
 for k in d.keys():
     if len(d[k]) == 5:
-        print(d[k][0])
+        print(min(d[k]))
         break
