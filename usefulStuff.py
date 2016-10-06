@@ -44,7 +44,7 @@ def genPrimes(n):
     return [2] + list(sieve(n))
 
 
-
+_known_primes = genPrimes(LIMIT)
 
 def primeFactors(n):
     if n <= 1:
@@ -58,13 +58,14 @@ def primeFactors(n):
 def primeFactorsMulti(n):
     if n <= 1:
         return []
-    t = []
+    multi = 0
     for p in _known_primes:
-        if n % p == 0: break
+        if n % p == 0:
+            break
     while n % p == 0:
-        t += [p]
+        multi += 1
         n //= p
-    return t + primeFactors(n)
+    return [(p, multi)] + primeFactorsMulti(n)
 
     
 
@@ -98,7 +99,7 @@ def _try_composite(a, d, n, s):
             return False
     return True
 
-_known_primes = genPrimes(LIMIT)
+
  
 def is_prime(n, _precision_for_huge_n=16):
     if n in _known_primes or n in (0, 1):
