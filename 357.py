@@ -1,30 +1,14 @@
-from usefulStuff import genPrimes as primes
+from usefulStuff import genPrimes
+from sympy import isprime, divisors
 
-p = primes(100000000)
-d = []
-
-possible = [i-1 for i in p if (i-1) % 4 != 0]
-
-print(len(possible))
-
-for i in possible:
-    if i == 6:
-        pass
+def cond(n):
+    if not isprime(int(2 + n/2)): return False
     else:
-        if i % 10 == 6:
-            possible.remove(i)
-
-def con2(n):
-    if int(2 + n/2) in p: return True
-    else: return False
-
-def con3(n):
-    for d in range(3,int(n**0.5)):
-        if n % d == 0:
-            if int(d + n/d) not in p:
-                return False
+        d = divisors(n)
+        for i in range(2,int(len(d)/2)):
+            if not isprime(d[i] + int(n/d[i])): return False
     return True
 
-print(len(possible))
+U = [i-1 for i in genPrimes(100000000) if (i-1) % 4 != 0]
 
-
+print(sum([n for n in U if cond(n)]))
