@@ -1,11 +1,8 @@
-from usefulStuff import flatten
-
 singles = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
 teens = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
 
 tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-
 
 def build20to100():
   return [a + " " + b for a in tens for b in singles]
@@ -20,6 +17,5 @@ countemup = 0
 
 for num in (singles + teens + tens + build20to100() + build101to999() + buildtherest()):
   countemup += sum([len(x) for x in num.split(" ")])
-
 
 print(countemup)

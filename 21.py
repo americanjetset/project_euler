@@ -1,4 +1,4 @@
-from usefulStuff import divisors
+from sympy import divisors
 
 def isAmicable(n):
   a1 = sum(divisors(n)) - n
@@ -20,7 +20,5 @@ def func21(arg):
         yield sum(divisors(n)) - n
         amiCheck[int(sum(divisors(n)) - n)] = True
       amiCheck[n] = True
-
-
 
 print(sum([i for i in func21(10000)]))

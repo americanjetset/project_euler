@@ -1,15 +1,9 @@
-from usefulStuff import genPrimes,totient
-from functools import reduce
-from operator import mul
-from math import log as ln
+from sympy import totient
+from sympy.ntheory.generate import primorial
 
 
 def R(n):
     return totient(n)/(n-1)
-
-def primorial(n):
-    primes = genPrimes(100)
-    return reduce(mul, primes[:n])
 
 test = [primorial(n) for n in range(1,10)]
 

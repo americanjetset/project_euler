@@ -1,5 +1,6 @@
-from usefulStuff import genPrimes
-from sympy import isprime, divisors
+from sympy import isprime, divisors, sieve
+
+sieve.extend(100000000)
 
 def cond(n):
     if not isprime(int(2 + n/2)): return False
@@ -9,6 +10,6 @@ def cond(n):
             if not isprime(d[i] + int(n/d[i])): return False
     return True
 
-U = [i-1 for i in genPrimes(100000000) if (i-1) % 4 != 0]
+U = [i-1 for i in sieve.primerange(1,100000000) if (i-1) % 4 != 0]
 
 print(sum([n for n in U if cond(n)]))

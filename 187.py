@@ -1,6 +1,7 @@
-from usefulStuff import genPrimes
+from sympy import sieve, primepi
 
 def numSemiprimes(x):
-    base = genPrimes(int(x**0.5))
-    return sum([len(genPrimes(int(x/base[k-1])+1)) - k + 1 for k in range(1,len(base)+1)])
-    
+    base = list(sieve.primerange(1,int(x**0.5)+1))
+    return sum([primepi(int(x/base[k-1])+1) - k + 1 for k in range(1,primepi(int(x**0.5)))])
+
+print(numSemiprimes(10**8))    

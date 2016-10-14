@@ -1,3 +1,3 @@
-from usefulStuff import factorial
+from sympy import factorial
 
-sum([int(d) for d in str(factorial(100))])
+print(sum([int(d) for d in str(factorial(100))]))

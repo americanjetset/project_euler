@@ -1,4 +1,3 @@
-from usefulStuff import factorial
+from sympy import factorial
 
-
-factorial(40)/(factorial(20)*factorial(20))
+print(factorial(40)/(factorial(20)*factorial(20)))

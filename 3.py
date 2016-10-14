@@ -1,11 +1,3 @@
-from usefulStuff import genPrimes
+from sympy import factorint
 
-p = 600851475143
-
-l = 0
-
-for i in genPrimes(int(p**0.5)):
-  if p % i == 0:
-    l = i
-
-print(i)
+print(max(factorint(600851475143).keys()))

@@ -1,19 +1,15 @@
-from usefulStuff import *
+from sympy import factorint
+from operator import mul
+from functools import reduce
 
-result = 1
+facts = {}
 
-multiplicity = []
+for i in range(2,21):
+  tmp = factorint(i)
+  for d in tmp.keys():
+    try:
+      facts[d] = max(facts[d],tmp[d])
+    except KeyError:
+      facts[d] = tmp[d]
 
-def maxCount(lis, elem):
-  count = 0
-  for l in lis:
-    count = max(l.count(elem),count)
-  return count
-
-for p in genPrimes(20):
-  multiplicity += [maxCount([primeFactors(i) for i in range(2,21)],p)]
-
-for (p,m) in zip(primes,multiplicity):
-  result *= (p**m)
-
-print(result)
+print(reduce(mul, [d**facts[d] for d in facts]))

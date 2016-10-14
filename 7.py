@@ -1,3 +1,3 @@
-from usefulStuff import genPrimes
+from sympy import prime
 
-print(genPrimes(1000000)[10000])
+print(prime(10001))

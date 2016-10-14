@@ -1,4 +1,4 @@
-from datetime import *
+from datetime import date
 
 count = 0
 
@@ -6,4 +6,4 @@ for y in range(1901,2001):
   for m in range(1,13):
     if date(y,m,1).weekday() == 6:
       count +=1
-count
+print(count)

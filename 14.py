@@ -9,13 +9,11 @@ def collatzCount(n):
       count += 1
   return count
 
-def func14():
-  m = 0
-  res = 0
-  for i in range(1,1000000,2):
-    if collatzCount(i) > m:
-      m = collatzCount(i)
-      res = i
-  return res
+m = 0
+res = 0
+for i in range(1,1000000,2):
+  if collatzCount(i) > m:
+    m = collatzCount(i)
+    res = i
 
-func14()
+print(res)

@@ -4,11 +4,9 @@ def isPalindrome(n):
 
 def productOfThreeDigits(n):
   for i in range(100,1000):
-    if n / float(i) in range(100,1000):
+    if n / i in range(100,1000):
       return True
   return False
-
-
 
 for n in range(999*999,0,-1):
   if (isPalindrome(n) and productOfThreeDigits(n)):

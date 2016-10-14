@@ -1,3 +1,3 @@
-from usefulStuff import genPrimes
+from sympy import sieve
 
-sum(genPrimes(2000000))
+print(sum([i for i in sieve.primerange(2,2000000)]))
