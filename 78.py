@@ -1,4 +1,4 @@
-from sympy import npartitions
+from sympy import npartitions as p
 
 n = 5
 while p(n) % 10**6 != 0:
